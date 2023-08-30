@@ -29,14 +29,12 @@ while True:
     for i in carList:
        print(i.name,i.indx)
     print("new epoch \n")   
-
     currentCar = randCar(carList)
     currentCar.ind()
     if currentCar.indx == 3:
         if  totrt != currentCar:
            totrt.indx = 0
         totrt = currentCar 
-
     if currentCar.indx == 4:
        print(f"giriş yapan 4.{currentCar.name} model araç")
        break
