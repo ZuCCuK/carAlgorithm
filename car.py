@@ -22,19 +22,23 @@ z = carClass("z")
 totrt=z
 carList = [a, b, c, d, e, f, g, h, i, j]
 
-
 def randCar(x):
     return random.choice(x)
        
 while True:
     for i in carList:
        print(i.name,i.indx)
-    print("new epoch \n")   
-    try:
-        chs = int(input("0 = A\n1 = B\n2=C\n3 = D\n4 = E\n5 = F\n6 = G\n7 = H\n 8 = İ\n9 = JListedeki araçlardan hangisini seçmek istiyorsanız ona karşılık gelen rakamı yazın."))#randCar(carList)
-        currentCar = carList[chs]
-    except:
-       print("Doğru değeri girdiğinizden emin olunuz")
+    #print("new epoch")
+    print("\n")   
+    fc = input("otomatik(o)\t manuel(m) -> ")
+    if fc == "m":
+        try:
+            chs = int(input("0 = A\n1 = B\n2=C\n3 = D\n4 = E\n5 = F\n6 = G\n7 = H\n 8 = İ\n9 = JListedeki araçlardan hangisini seçmek istiyorsanız ona karşılık gelen rakamı yazın."))
+            currentCar = carList[chs]
+        except:
+            print("Doğru değeri girdiğinizden emin olunuz")
+    elif fc == "o":
+        currentCar = randCar(carList)
     currentCar.ind()
     if currentCar.indx == 3:
         if  totrt != currentCar:
@@ -44,4 +48,3 @@ while True:
        print(f"giriş yapan 4.{currentCar.name} model araç")
        break
         
-
